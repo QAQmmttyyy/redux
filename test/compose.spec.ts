@@ -53,10 +53,10 @@ describe('Utils', () => {
       expect(compose()(undefined)).toBe(undefined)
     })
 
-    it('returns the first function if given only one', () => {
-      const fn = () => {}
+    it('call result of returned function should be same as the first function call result if given only one', () => {
+      const fn = (x: number) => x
 
-      expect(compose(fn)).toBe(fn)
+      expect(compose(fn)(1)).toBe(fn(1))
     })
   })
 })
